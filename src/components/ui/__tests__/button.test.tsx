@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
-import { describe, expect, it, vi } from "vitest"
 import { createRef } from "react"
+import { describe, expect, it, vi } from "vitest"
 
 import { Button, buttonVariants } from "../button"
 
@@ -15,23 +15,23 @@ describe("Button", () => {
     })
 
     it("children을 올바르게 렌더링한다", () => {
-      render(<Button><span>Icon</span> Label</Button>)
+      render(
+        <Button>
+          <span>Icon</span> Label
+        </Button>
+      )
       const button = screen.getByRole("button")
       expect(button).toHaveTextContent("Icon")
       expect(button).toHaveTextContent("Label")
     })
 
-    it.each([
-      "default",
-      "destructive",
-      "outline",
-      "secondary",
-      "ghost",
-      "link",
-    ] as const)("variant='%s'가 렌더링된다", (variant) => {
-      render(<Button variant={variant}>btn</Button>)
-      expect(screen.getByRole("button")).toHaveAttribute("data-variant", variant)
-    })
+    it.each(["default", "destructive", "outline", "secondary", "ghost", "link"] as const)(
+      "variant='%s'가 렌더링된다",
+      (variant) => {
+        render(<Button variant={variant}>btn</Button>)
+        expect(screen.getByRole("button")).toHaveAttribute("data-variant", variant)
+      }
+    )
 
     it.each([
       "xs",
@@ -100,7 +100,11 @@ describe("Button", () => {
     it("disabled 상태에서 클릭이 무시된다", async () => {
       const user = userEvent.setup()
       const onClick = vi.fn()
-      render(<Button disabled onClick={onClick}>btn</Button>)
+      render(
+        <Button disabled onClick={onClick}>
+          btn
+        </Button>
+      )
 
       await user.click(screen.getByRole("button"))
       expect(onClick).not.toHaveBeenCalled()
@@ -131,7 +135,11 @@ describe("Button", () => {
 
   describe("접근성", () => {
     it("ARIA 속성이 전달된다", () => {
-      render(<Button aria-label="닫기" aria-expanded={true}>X</Button>)
+      render(
+        <Button aria-expanded={true} aria-label="닫기">
+          X
+        </Button>
+      )
       const button = screen.getByRole("button")
       expect(button).toHaveAttribute("aria-label", "닫기")
       expect(button).toHaveAttribute("aria-expanded", "true")

@@ -1,7 +1,8 @@
-import type { Meta, StoryObj } from "@storybook/nextjs-vite"
 import { ChevronRight, Loader2, Mail, Plus, Trash2 } from "lucide-react"
 
 import { Button } from "./button"
+
+import type { Meta, StoryObj } from "@storybook/nextjs-vite"
 
 const meta = {
   title: "UI/Button",
@@ -17,7 +18,20 @@ const meta = {
     },
     size: {
       control: "select",
-      options: ["xs", "sm", "default", "lg", "icon", "icon-xs", "icon-sm", "icon-lg", "responsive:xs", "responsive:sm", "responsive:default", "responsive:lg"],
+      options: [
+        "xs",
+        "sm",
+        "default",
+        "lg",
+        "icon",
+        "icon-xs",
+        "icon-sm",
+        "icon-lg",
+        "responsive:xs",
+        "responsive:sm",
+        "responsive:default",
+        "responsive:lg",
+      ],
     },
     disabled: { control: "boolean" },
     asChild: { control: "boolean" },
@@ -69,7 +83,7 @@ export const ResponsiveXs: Story = {
   parameters: { layout: "fullscreen" },
   render: () => (
     <div className="p-8">
-      <p className="mb-4 text-sm text-muted-foreground">
+      <p className="text-muted-foreground mb-4 text-sm">
         responsive:xs — 브라우저 너비를 조절하여 반응형 크기 변화를 확인하세요.
       </p>
       <Button size="responsive:xs">Responsive XS</Button>
@@ -81,7 +95,7 @@ export const ResponsiveSm: Story = {
   parameters: { layout: "fullscreen" },
   render: () => (
     <div className="p-8">
-      <p className="mb-4 text-sm text-muted-foreground">
+      <p className="text-muted-foreground mb-4 text-sm">
         responsive:sm — 브라우저 너비를 조절하여 반응형 크기 변화를 확인하세요.
       </p>
       <Button size="responsive:sm">Responsive SM</Button>
@@ -93,7 +107,7 @@ export const ResponsiveDefault: Story = {
   parameters: { layout: "fullscreen" },
   render: () => (
     <div className="p-8">
-      <p className="mb-4 text-sm text-muted-foreground">
+      <p className="text-muted-foreground mb-4 text-sm">
         responsive:default — 브라우저 너비를 조절하여 반응형 크기 변화를 확인하세요.
       </p>
       <Button size="responsive:default">Responsive Default</Button>
@@ -105,7 +119,7 @@ export const ResponsiveLg: Story = {
   parameters: { layout: "fullscreen" },
   render: () => (
     <div className="p-8">
-      <p className="mb-4 text-sm text-muted-foreground">
+      <p className="text-muted-foreground mb-4 text-sm">
         responsive:lg — 브라우저 너비를 조절하여 반응형 크기 변화를 확인하세요.
       </p>
       <Button size="responsive:lg">Responsive LG</Button>
@@ -157,11 +171,15 @@ export const States: Story = {
       </div>
       <div className="flex flex-wrap items-center gap-4">
         <Button variant="outline">Normal</Button>
-        <Button variant="outline" disabled>Disabled</Button>
+        <Button disabled variant="outline">
+          Disabled
+        </Button>
       </div>
       <div className="flex flex-wrap items-center gap-4">
         <Button variant="destructive">Normal</Button>
-        <Button variant="destructive" disabled>Disabled</Button>
+        <Button disabled variant="destructive">
+          Disabled
+        </Button>
       </div>
     </div>
   ),
