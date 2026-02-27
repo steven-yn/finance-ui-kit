@@ -114,6 +114,7 @@ export default {
           "z-index": ["auto", "-1", "0", "1"],
         },
         ignoreFunctions: true,
+        severity: "warning",
         disableFix: true,
         message: "\"${value}\"은(는) \"${property}\"에 사용할 수 없습니다. 디자인 토큰(CSS 변수)을 사용하세요.",
       },
