@@ -29,11 +29,16 @@ const buttonVariants = cva(
         "icon-xs": "size-6 rounded-md [&_svg:not([class*='size-'])]:size-3",
         "icon-sm": "size-8",
         "icon-lg": "size-10",
+        responsive:
+          "h-6 gap-1 px-2 text-xs has-[>svg]:px-1.5 [&_svg:not([class*='size-'])]:size-3 " +
+          "sm:h-8 sm:gap-1.5 sm:px-3 sm:text-sm sm:has-[>svg]:px-2.5 sm:[&_svg:not([class*='size-'])]:size-4 " +
+          "md:h-9 md:px-4 md:py-2 md:has-[>svg]:px-3 " +
+          "lg:h-10 lg:px-6 lg:has-[>svg]:px-4",
       },
     },
     defaultVariants: {
       variant: "default",
-      size: "default",
+      size: "responsive",
     },
   }
 )
@@ -41,7 +46,7 @@ const buttonVariants = cva(
 function Button({
   className,
   variant = "default",
-  size = "default",
+  size = "responsive",
   asChild = false,
   ...props
 }: React.ComponentProps<"button"> &

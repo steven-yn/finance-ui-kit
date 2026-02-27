@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -6,7 +6,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 import {
   Search,
   MapPin,
@@ -25,7 +25,7 @@ import {
   Wifi,
   Shield,
   Headphones,
-} from "lucide-react"
+} from "lucide-react";
 
 const destinations = [
   {
@@ -112,21 +112,45 @@ const destinations = [
     temp: "8°C",
     category: "Nature",
   },
-]
+];
 
 const categories = [
-  { name: "Beaches", icon: Globe, count: 248, color: "text-sky-600 bg-sky-100" },
-  { name: "Culture", icon: Camera, count: 183, color: "text-violet-600 bg-violet-100" },
-  { name: "Adventure", icon: Compass, count: 127, color: "text-green-600 bg-green-100" },
-  { name: "City Trips", icon: MapPin, count: 312, color: "text-primary bg-primary/10" },
-]
+  {
+    name: "Beaches",
+    icon: Globe,
+    count: 248,
+    color: "text-sky-600 bg-sky-100",
+  },
+  {
+    name: "Culture",
+    icon: Camera,
+    count: 183,
+    color: "text-violet-600 bg-violet-100",
+  },
+  {
+    name: "Adventure",
+    icon: Compass,
+    count: 127,
+    color: "text-green-600 bg-green-100",
+  },
+  {
+    name: "City Trips",
+    icon: MapPin,
+    count: 312,
+    color: "text-primary bg-primary/10",
+  },
+];
 
 const travelPerks = [
   { icon: Shield, title: "Safe Travel", desc: "Verified guides & operators" },
-  { icon: Headphones, title: "24/7 Support", desc: "Real-time trip assistance" },
+  {
+    icon: Headphones,
+    title: "24/7 Support",
+    desc: "Real-time trip assistance",
+  },
   { icon: Wifi, title: "Stay Connected", desc: "Free eSIM on every booking" },
   { icon: Heart, title: "Curated Picks", desc: "Hand-selected experiences" },
-]
+];
 
 const upcomingTrip = {
   destination: "Santorini, Greece",
@@ -134,7 +158,7 @@ const upcomingTrip = {
   travelers: 2,
   status: "Confirmed",
   daysLeft: 17,
-}
+};
 
 function StarRating({ rating }: { rating: number }) {
   return (
@@ -150,7 +174,7 @@ function StarRating({ rating }: { rating: number }) {
         />
       ))}
     </div>
-  )
+  );
 }
 
 export default function Home() {
@@ -164,11 +188,16 @@ export default function Home() {
               <Plane className="size-4" />
             </div>
             <span className="text-xl font-bold tracking-tight">Wandr</span>
+            <Button>button</Button>
           </div>
 
           <nav className="hidden items-center gap-6 text-sm font-medium text-muted-foreground md:flex">
             {["Explore", "Packages", "My Trips", "Guides"].map((item) => (
-              <a key={item} href="#" className="transition-colors hover:text-foreground">
+              <a
+                key={item}
+                href="#"
+                className="transition-colors hover:text-foreground"
+              >
                 {item}
               </a>
             ))}
@@ -207,8 +236,8 @@ export default function Home() {
               <span className="text-primary">Adventure</span> Awaits
             </h1>
             <p className="text-lg text-muted-foreground">
-              Discover breathtaking destinations, curated itineraries, and unforgettable
-              experiences. Start your journey today.
+              Discover breathtaking destinations, curated itineraries, and
+              unforgettable experiences. Start your journey today.
             </p>
 
             {/* Search Bar */}
@@ -220,14 +249,21 @@ export default function Home() {
               <div className="hidden h-8 w-px bg-border sm:block" />
               <div className="flex flex-1 items-center gap-3 px-2">
                 <Calendar className="size-4 shrink-0 text-muted-foreground" />
-                <span className="text-sm text-muted-foreground">Pick dates</span>
+                <span className="text-sm text-muted-foreground">
+                  Pick dates
+                </span>
               </div>
               <div className="hidden h-8 w-px bg-border sm:block" />
               <div className="flex flex-1 items-center gap-3 px-2">
                 <Users className="size-4 shrink-0 text-muted-foreground" />
-                <span className="text-sm text-muted-foreground">2 travelers</span>
+                <span className="text-sm text-muted-foreground">
+                  2 travelers
+                </span>
               </div>
-              <Button size="lg" className="gap-2 bg-cta text-cta-foreground hover:bg-cta/90 shrink-0">
+              <Button
+                size="lg"
+                className="gap-2 bg-cta text-cta-foreground hover:bg-cta/90 shrink-0"
+              >
                 <Search className="size-4" />
                 Search
               </Button>
@@ -257,21 +293,28 @@ export default function Home() {
                     <p className="text-xs font-medium text-primary-foreground/70 uppercase tracking-widest mb-0.5">
                       Upcoming Trip
                     </p>
-                    <p className="font-semibold text-lg leading-tight">{upcomingTrip.destination}</p>
+                    <p className="font-semibold text-lg leading-tight">
+                      {upcomingTrip.destination}
+                    </p>
                     <div className="flex items-center gap-3 mt-1 text-sm text-primary-foreground/80">
                       <span className="flex items-center gap-1">
                         <Calendar className="size-3.5" /> {upcomingTrip.date}
                       </span>
                       <span className="flex items-center gap-1">
-                        <Users className="size-3.5" /> {upcomingTrip.travelers} travelers
+                        <Users className="size-3.5" /> {upcomingTrip.travelers}{" "}
+                        travelers
                       </span>
                     </div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="text-center">
-                    <p className="text-3xl font-bold">{upcomingTrip.daysLeft}</p>
-                    <p className="text-xs text-primary-foreground/70">days to go</p>
+                    <p className="text-3xl font-bold">
+                      {upcomingTrip.daysLeft}
+                    </p>
+                    <p className="text-xs text-primary-foreground/70">
+                      days to go
+                    </p>
                   </div>
                   <div className="flex flex-col gap-2">
                     <span className="rounded-full bg-green-400/20 px-3 py-1 text-xs font-semibold text-green-300">
@@ -295,8 +338,12 @@ export default function Home() {
         <section className="space-y-6">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-2xl font-bold tracking-tight">Browse by Type</h2>
-              <p className="text-sm text-muted-foreground">Find your kind of escape</p>
+              <h2 className="text-2xl font-bold tracking-tight">
+                Browse by Type
+              </h2>
+              <p className="text-sm text-muted-foreground">
+                Find your kind of escape
+              </p>
             </div>
             <Button variant="ghost" size="sm" className="gap-1">
               All categories <ArrowRight className="size-3.5" />
@@ -309,12 +356,16 @@ export default function Home() {
                 className="group cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
               >
                 <CardContent className="flex flex-col items-center gap-3 py-8 text-center">
-                  <div className={`flex size-12 items-center justify-center rounded-xl ${color}`}>
+                  <div
+                    className={`flex size-12 items-center justify-center rounded-xl ${color}`}
+                  >
                     <Icon className="size-6" />
                   </div>
                   <div>
                     <p className="font-semibold">{name}</p>
-                    <p className="text-xs text-muted-foreground">{count} destinations</p>
+                    <p className="text-xs text-muted-foreground">
+                      {count} destinations
+                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -326,14 +377,26 @@ export default function Home() {
         <section className="space-y-6">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-2xl font-bold tracking-tight">Featured Destinations</h2>
-              <p className="text-sm text-muted-foreground">Handpicked for this season</p>
+              <h2 className="text-2xl font-bold tracking-tight">
+                Featured Destinations
+              </h2>
+              <p className="text-sm text-muted-foreground">
+                Handpicked for this season
+              </p>
             </div>
             <div className="flex gap-2">
-              <Button variant="secondary" size="sm">All</Button>
-              <Button variant="outline" size="sm">Beach</Button>
-              <Button variant="ghost" size="sm">Adventure</Button>
-              <Button variant="ghost" size="sm">Culture</Button>
+              <Button variant="secondary" size="sm">
+                All
+              </Button>
+              <Button variant="outline" size="sm">
+                Beach
+              </Button>
+              <Button variant="ghost" size="sm">
+                Adventure
+              </Button>
+              <Button variant="ghost" size="sm">
+                Culture
+              </Button>
             </div>
           </div>
 
@@ -363,14 +426,18 @@ export default function Home() {
                   </Button>
                   <div className="absolute bottom-3 left-3 flex items-center gap-1.5 rounded-full bg-black/40 px-2.5 py-1 backdrop-blur-sm">
                     <Thermometer className="size-3 text-white" />
-                    <span className="text-xs font-medium text-white">{dest.temp}</span>
+                    <span className="text-xs font-medium text-white">
+                      {dest.temp}
+                    </span>
                   </div>
                 </div>
 
                 <CardHeader className="pb-2">
                   <CardTitle className="flex items-center justify-between text-base">
                     <span>{dest.name}</span>
-                    <span className="text-sm font-normal text-muted-foreground">{dest.country}</span>
+                    <span className="text-sm font-normal text-muted-foreground">
+                      {dest.country}
+                    </span>
                   </CardTitle>
                   <CardDescription className="flex items-center gap-3">
                     <div className="flex items-center gap-1.5">
@@ -389,10 +456,18 @@ export default function Home() {
                 <CardFooter className="pt-0 flex items-center justify-between">
                   <div>
                     <span className="text-xs text-muted-foreground">from </span>
-                    <span className="text-lg font-bold text-foreground">${dest.price}</span>
-                    <span className="text-xs text-muted-foreground"> / person</span>
+                    <span className="text-lg font-bold text-foreground">
+                      ${dest.price}
+                    </span>
+                    <span className="text-xs text-muted-foreground">
+                      {" "}
+                      / person
+                    </span>
                   </div>
-                  <Button size="sm" className="gap-1.5 bg-cta text-cta-foreground hover:bg-cta/90">
+                  <Button
+                    size="sm"
+                    className="gap-1.5 bg-cta text-cta-foreground hover:bg-cta/90"
+                  >
                     Explore
                     <ArrowRight className="size-3.5" />
                   </Button>
@@ -471,7 +546,11 @@ export default function Home() {
             </p>
             <div className="flex gap-4 text-sm text-muted-foreground">
               {["Privacy", "Terms", "Contact"].map((item) => (
-                <a key={item} href="#" className="hover:text-foreground transition-colors">
+                <a
+                  key={item}
+                  href="#"
+                  className="hover:text-foreground transition-colors"
+                >
                   {item}
                 </a>
               ))}
@@ -480,5 +559,5 @@ export default function Home() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
